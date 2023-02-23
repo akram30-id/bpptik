@@ -17,7 +17,7 @@
         <div id="imdo" class="gpd-text">Kalkulator Sederhana</div>
     </div>
     <div id="irez" class="gpd-box">
-        <form method="post" id="i07w" data-redirect="" class="form" action="counted.php">
+        <form method="post" id="i07w" data-redirect="" class="form" action="./app/counted.php">
             <div class="form-group">
                 <input type="number" placeholder="Input Bilangan 1" name="bilangan_1" id="i53by" value="0" class="input" />
                 <input type="number" placeholder="Input Bilangan 2" name="bilangan_2" id="i2b8x" value="0" class="input" />

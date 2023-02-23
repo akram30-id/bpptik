@@ -15,8 +15,9 @@ Berikut struktur folder dalam aplikasi ini:
  ┣ 📜count.php
  ┣ 📜counted.php
  ┣ 📜index.php
- ┗ 📜test
- ```
+ ┗ 📜Readme.md
+
+```
 
 ## Requirements
 
