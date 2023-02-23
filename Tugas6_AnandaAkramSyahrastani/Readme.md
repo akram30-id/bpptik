@@ -9,11 +9,12 @@ Berikut struktur folder dalam aplikasi ini:
 ```
 
 📦Tugas6_AnandaAkramSyahrastani
+ ┣ 📂app
+ ┃ ┣ 📜count.php
+ ┃ ┗ 📜counted.php
  ┣ 📂css
  ┃ ┣ 📜style.css
  ┃ ┗ 📜style_2.css
- ┣ 📜count.php
- ┣ 📜counted.php
  ┣ 📜index.php
  ┗ 📜Readme.md
 
