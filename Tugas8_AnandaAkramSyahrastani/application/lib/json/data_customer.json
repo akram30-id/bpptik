@@ -1,0 +1,29 @@
+{
+    "response": {
+        "status": 200,
+        "message": "json connected",
+        "data": [
+            {
+                "pembeli": "Budi",
+                "buah": "Durian",
+                "jumlah": 2,
+                "harga": 20000,
+                "total": 40000
+            },
+            {
+                "pembeli": "Agus",
+                "buah": "Apel",
+                "jumlah": 4,
+                "harga": 30000,
+                "total": 120000
+            },
+            {
+                "pembeli": "Tuti",
+                "buah": "Mangga",
+                "jumlah": 3,
+                "harga": 15000,
+                "total": 45000
+            }
+        ]
+    }
+}
