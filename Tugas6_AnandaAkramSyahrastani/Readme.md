@@ -22,7 +22,7 @@ Berikut struktur folder dalam aplikasi ini:
 
 ## Requirements
 
-* XAMPP : PHP >= 8.0.0
+* XAMPP : PHP >= 8.2.0
 * Google Chrome >= 89.0.4389.114
 
 ## Instalation
@@ -35,7 +35,7 @@ Berikut struktur folder dalam aplikasi ini:
 
 1. Letakan folder **Tugas6_AnandaAkramSyahrastani** ke dalam 
     > *C:\xampp\htdocs*  (Windows).
-2. Jalankan *XAMPP -> Apache*.
+2. Jalankan XAMPP lalu klik tombol *Start* pada *Apache*.
 3. Buka Browser ketikan 
    > *localhost/Tugas6_AnandaAkramSyahrastani*.
 
