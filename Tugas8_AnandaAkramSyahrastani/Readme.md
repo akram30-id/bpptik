@@ -59,7 +59,7 @@ Berikut struktur folder dalam aplikasi ini:
    
 ## Usage
 
-1. Letakan folder **Tugas6_AnandaAkramSyahrastani** ke dalam 
+1. Letakan folder **Tugas8_AnandaAkramSyahrastani** ke dalam 
     > *C:\xampp\htdocs*  (Windows).
 2. Jalankan XAMPP lalu klik tombol *Start* pada *Apache*.
 3. Buka Browser ketikan 
