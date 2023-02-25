@@ -20,6 +20,11 @@ class Selling
         if (isset($_POST['hitung'])) { // pengecekan apakah ada form yang di-submit untuk penambahan data penjualan
             return $this->sold();
         }
+
+        if (isset($_GET['customer'])) {
+            $id = $_GET['customer'];
+            return $this->delete($id);
+        }
     }
 
     /* 
@@ -32,7 +37,7 @@ class Selling
 
         $dataHarga = json_decode($selling->getListHarga()); // mendapatkan data harga dari db
         $dataCustomer = json_decode($selling->getListCustomer()); // mendapatkan data customer dari db
-        
+
         $data = [
             'buah' => $dataHarga,
             'customer' => $dataCustomer
@@ -42,7 +47,7 @@ class Selling
         include './application/view/template/header.php';
         include './application/view/selling/index.php';
         include './application/view/template/footer.php';
-        
+
         return $data;
     }
 
@@ -67,10 +72,11 @@ class Selling
             $pajak = $total * 0.1;
         }
 
-        $totalBayar = $total - $pajak; 
+        $totalBayar = $total - $pajak;
 
         // tampung seluruh data ke array asosiatf
         $dataNew = [
+            "id" => bin2hex(date('Y-m-d H:i:s') . $pembeli),
             "pembeli" => $pembeli,
             "buah" => $namaBuah,
             "jumlah" => $jumlah,
@@ -89,6 +95,36 @@ class Selling
 
         unset($_POST);
         header('Location: http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']); // redirect ke method index
+        die();
+    }
+
+    function delete($id)
+    {
+        $selling = new SellingModel(); // instansiasi object dari Class Model SellingModel
+        $dataCustomer = json_decode($selling->getListCustomer(), true); // ubah json object menjadi PHP associative array
+        // $key = array_search(['buah'], $dataCustomer['response']['data']);
+        // array_splice($dataCustomer->response->data, $key);
+
+        $keyAssign = NULL;
+        foreach ($dataCustomer['response']['data'] as $key => $value) {
+            if ($value['id'] == $id) {
+                $keyAssign = $key;
+            } else {
+                continue;
+            }
+        }
+        if (count($dataCustomer['response']['data']) == 1 || $keyAssign == 0) {
+            array_shift($dataCustomer['response']['data']);
+        } else {
+            array_splice($dataCustomer['response']['data'], $keyAssign, $keyAssign);
+        }
+        // unset($dataCustomer['response']['data'][$keyAssign]);
+
+        unlink($selling::JSON . 'data_customer.json'); // hapus file data_customer.json yang lama
+        file_put_contents($selling::JSON . 'data_customer.json', json_encode($dataCustomer)); // buat file data_customer.json yang baru dengan penambahan input data baru
+
+        unset($_GET);
+        header('Location: http://' . $_SERVER['HTTP_HOST'] . '/bpptik/Tugas9_AnandaAkramSyahrastani'); // redirect ke method index
         die();
     }
 }

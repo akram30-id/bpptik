@@ -1,0 +1,38 @@
+{
+    "bandara_asal": [
+        {
+            "bandara": "Soekarno-Hatta (CGK)",
+            "pajak": 50000
+        },
+        {
+            "bandara": "Husein Sastranegara (BDO)",
+            "pajak": 30000
+        },
+        {
+            "bandara": "Abdul Rachman Saleh (MLG)",
+            "pajak": 40000
+        },
+        {
+            "bandara": "Juanda (SUB)",
+            "pajak": 40000
+        }
+    ],
+    "bandara_tujuan": [
+        {
+            "bandara": "Ngurah Rai (DPS)",
+            "pajak": 80000
+        },
+        {
+            "bandara": "Hasanuddin (UPG)",
+            "pajak": 70000
+        },
+        {
+            "bandara": "Inanwatan (INX)",
+            "pajak": 90000
+        },
+        {
+            "bandara": "Sultan Iskandarmuda (BTJ)",
+            "pajak": 70000
+        }
+    ]
+}

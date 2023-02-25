@@ -1,6 +1,6 @@
 <!-- INPUT PENJUALAN -->
 <div class="row justify-content-center">
-    <div class="col-6">
+    <div class="col-sm-6">
         <div class="card border-0 shadow-lg rounded">
             <div class="card-body p-5">
 
@@ -58,7 +58,7 @@
                 <!-- LIST HARGA -->
                 <h4 class="text-center mb-3 mt-5">Tabel Harga</h4>
                 <div class="row justify-content-center">
-                    <div class="col-10">
+                    <div class="col-sm-10">
                         <table class="table table-striped table-hover">
                             <tr>
                                 <?php foreach ($data['buah']->response->data as $buah) { ?>
@@ -77,44 +77,50 @@
                 <!-- LIST PENJUALAN -->
                 <h4 class="text-center mb-3 mt-5">Daftar Penjualan</h4>
                 <div class="row justify-content-center">
-                    <div class="col-12">
-                        <table class="table table-striped table-hover">
-                            <thead>
-                                <tr>
-                                    <th class="text-center">No.</th>
-                                    <th class="text-center">Nama Pembeli</th>
-                                    <th class="text-center">Nama Buah</th>
-                                    <th class="text-center">Jumlah</th>
-                                    <th class="text-center">Harga</th>
-                                    <th class="text-center">Total</th>
-                                    <th class="text-center">Pajak</th>
-                                    <th class="text-center">Total Bayar</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php $no = 1; ?>
-                                <?php if (count($data['customer']->response->data) == 0) { ?>
-                                    <tr class="text-center">
-                                        <td colspan="8">
-                                            <h5 class="fs-6 my-3"><i>No Data Available</i></h5>
-                                        </td>
+                    <div class="col-sm-12">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">No.</th>
+                                        <th class="text-center">Nama Pembeli</th>
+                                        <th class="text-center">Nama Buah</th>
+                                        <th class="text-center">Jumlah</th>
+                                        <th class="text-center">Harga</th>
+                                        <th class="text-center">Total</th>
+                                        <th class="text-center">Pajak</th>
+                                        <th class="text-center">Total Bayar</th>
+                                        <th class="text-center">Action</th>
                                     </tr>
-                                <?php } else { ?>
-                                    <?php foreach ($data['customer']->response->data as $customer) { ?>
-                                        <tr>
-                                            <td><?= $no++; ?></td>
-                                            <td><?= $customer->pembeli; ?></td>
-                                            <td><?= $customer->buah; ?></td>
-                                            <td><?= $customer->jumlah; ?></td>
-                                            <td><?= $customer->harga; ?></td>
-                                            <td><?= $customer->total; ?></td>
-                                            <td><?= $customer->pajak; ?></td>
-                                            <td><?= $customer->total_bayar; ?></td>
+                                </thead>
+                                <tbody>
+                                    <?php $no = 1; ?>
+                                    <?php if (count($data['customer']->response->data) == 0) { ?>
+                                        <tr class="text-center">
+                                            <td colspan="9">
+                                                <h5 class="fs-6 my-3"><i>No Data Available</i></h5>
+                                            </td>
                                         </tr>
+                                    <?php } else { ?>
+                                        <?php foreach ($data['customer']->response->data as $customer) { ?>
+                                            <tr>
+                                                <td><?= $no++; ?></td>
+                                                <td><?= $customer->pembeli; ?></td>
+                                                <td><?= $customer->buah; ?></td>
+                                                <td><?= $customer->jumlah; ?></td>
+                                                <td><?= $customer->harga; ?></td>
+                                                <td><?= $customer->total; ?></td>
+                                                <td><?= $customer->pajak; ?></td>
+                                                <td><?= $customer->total_bayar; ?></td>
+                                                <td>
+                                                    <a href="http://<?= $_SERVER['HTTP_HOST'] ?><?= $_SERVER['REQUEST_URI'] ?>?customer=<?= $customer->id ?>" class="btn btn-sm btn-danger" style="width: 32px;"><i class="bi bi-trash3-fill"></i></a>
+                                                </td>
+                                            </tr>
+                                        <?php } ?>
                                     <?php } ?>
-                                <?php } ?>
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
