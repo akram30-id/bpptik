@@ -11,7 +11,11 @@
 
     <form method="get">
         <label for="bintang">Jumlah Bintang</label><br>
-        <input type="number" name="bintang" id="bintang" <?php if (isset($_GET["bintang"])){echo "value=" . $_GET["bintang"];} else {echo "value=0";} ?> value="0">
+        <input type="number" name="bintang" id="bintang" <?php if (isset($_GET["bintang"])) {
+                                                                echo "value=" . $_GET["bintang"];
+                                                            } else {
+                                                                echo "value=0";
+                                                            } ?> value="0">
         <button style="margin-top: 8px;" type="submit">Kirim</button>
     </form>
 
@@ -26,6 +30,27 @@ if (isset($_GET["bintang"])) {
 
     for ($i = $bintang; $i > 0; $i--) {
         for ($j = $bintang; $j >= $i; $j--) {
+            echo "*";
+        }
+        echo "<br>";
+    }
+    
+    echo "<br> <br>";
+
+    for ($i = $bintang; $i > 0; $i--) {
+        for ($j = 1; $j <= $i; $j++) {
+            echo "&nbsp";
+        }
+        for ($k = $bintang; $k >= $i; $k--) {
+            echo "*";
+        }
+        echo "<br>";
+    }
+
+    echo "<br> <br>";
+
+    for ($i=1; $i <= $bintang; $i++) {
+        for ($j=$bintang; $j >= $i; $j--) {
             echo "*";
         }
         echo "<br>";
